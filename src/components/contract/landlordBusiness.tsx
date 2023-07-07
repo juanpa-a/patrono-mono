@@ -1,9 +1,13 @@
 import { TextField } from "@/components/textInput";
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text } from "@chakra-ui/react";
 
-export const LandlordBusiness = ({ handleChange: handleChange }) => {
+export const LandlordBusiness = ({
+  handleChange,
+}: {
+  handleChange: (x: any) => void;
+}) => {
   return (
-    <Box minW={'33vw'}>
+    <Box minW={"33vw"}>
       <Text fontWeight={800} fontSize={36}>
         PERSONA MORAL
       </Text>

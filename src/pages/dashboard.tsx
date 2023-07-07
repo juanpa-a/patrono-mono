@@ -1,25 +1,20 @@
-import Button from "@/components/button"
+import Button from "@/components/button";
 
-export default () => { 
+const Dashboard = () => {
   return (
     <>
-      <header className="text-2xl font-extrabold m-8">
+      <header className="m-8 text-2xl font-extrabold">
         CALIDAD QUE INSPIRA
       </header>
-      <div className="grid gap-4 grid-cols-2">
-        <Button
-          text="Crear"
-          onClick={()=>{}}
-          />
-        <Button
-          text="Consultar"
-          onClick={()=>{}}
-          secondary={true}
-          />
+      <div className="grid grid-cols-2 gap-4">
+        <Button text="Crear" onClick={console.log} />
+        <Button text="Consultar" onClick={console.log} secondary={true} />
       </div>
-      <span className="mx-16 text-center m-8">
+      <span className="m-8 mx-16 text-center">
         El contrato de arrendamiento automatizado más poderoso del mercado.
       </span>
     </>
-  )
-}
+  );
+};
+
+export default Dashboard;

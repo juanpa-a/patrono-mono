@@ -1,10 +1,14 @@
 import { TextField } from "@/components/textInput";
 import { SelectField } from "../selectInput";
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text } from "@chakra-ui/react";
 
-export const LandlordRepresentative = ({ handleChange: handleChange }) => {
+export const LandlordRepresentative = ({
+  handleChange,
+}: {
+  handleChange: (x: any) => void;
+}) => {
   return (
-    <Box minW={'33vw'}>
+    <Box minW={"33vw"}>
       <Text fontWeight={800} fontSize={36}>
         PROPIETARIO
       </Text>

@@ -3,7 +3,7 @@ type TextFieldProps = {
   label: string;
   placeholer?: string;
   isPassword?: boolean;
-  setValue: Function;
+  setValue: (x: any) => void;
 };
 
 export const TextField = ({

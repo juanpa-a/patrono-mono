@@ -20,9 +20,53 @@ import { useEffect, useState } from "react";
 
 const Observatory = () => {
   const [isDirty, setIsDirty] = useState(true);
-  const [contractConfig, setContractConfig] = useState({});
+  const [contractConfig, setContractConfig] = useState({
+    contractName: "",
+    // property
+    propertyAddress: "",
+    propertyState: "",
+    propertyUse: "",
+    propertyIsFurnished: false,
+    propertyFurniture: [],
+    propertyStreet: "",
+    propertyOuterNumber: "",
+    propertyInnerNumber: "",
+    // landlord representative
+    landlordIsMoralPerson: false,
+    landlordName: "",
+    landlordGender: "",
+    landlordNationality: "",
+    landlordEmail: "",
+    landlordBirthday: 0,
+    landlordRepresentativeName: "",
+    landlordRepresentativeGender: "",
+    // landlord moral
+    landlordMoralName: "",
+    landlordRFC: "",
+    // tenant
+    tenantName: "",
+    tenantEmail: "",
+    tenantGender: "",
+    tenantNationality: "",
+    tenantBirthday: 0,
+    // contract basic
+    contractStartDate: "",
+    contractEndDate: "",
+    paymentCycle: "",
+    paymentAmount: "",
+    paymentMethod: "",
+    guarenteeAmount: 0,
+    // contract custom
+    servicesAreIncluded: false,
+    mantainenceIsIncluded: false,
+    paymentGuarantee: 0,
+    // customProhibitions: [],
+    // contractIsConfidential: false,
+    // thirdPartyConflictResolution: false,
+    hasGuarantor: false,
+  });
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setContractConfig((prevData) => ({
       ...prevData,
@@ -30,6 +74,7 @@ const Observatory = () => {
     }));
   };
   const contractSteps = ContractFormSteps(handleChange);
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   const { activeStep, goToNext } = useSteps({
     index: 0,
     count: contractSteps.length,
@@ -40,7 +85,7 @@ const Observatory = () => {
   }, [activeStep]);
 
   useEffect(() => {
-    console.log(contractConfig);
+    // console.log(contractConfig);
     switch (activeStep) {
       case 0:
         if (contractConfig.contractName) setIsDirty(false);
@@ -99,7 +144,7 @@ const Observatory = () => {
       default:
         break;
     }
-  }, [contractConfig]);
+  }, [contractConfig, activeStep]);
 
   return (
     <VStack mt={16}>
@@ -191,17 +236,18 @@ const FormStepper = ({
   isDirty: boolean;
 }) => {
   const controls = useAnimationControls();
-  const restartAnimation = async (): any =>
-    await controls.start({
-      opacity: 1,
-      x: 0,
-      transition: { duration: "0.8", ease: "easeIn" },
-    });
-
   useEffect(() => {
+    const restartAnimation = async (): Promise<unknown> =>
+      controls.start({
+        opacity: 1,
+        x: 0,
+        transition: { duration: "0.8", ease: "easeIn" },
+      });
     // controls.start({ scale: 2 });
-    restartAnimation();
-  }, []);
+    restartAnimation()
+      .then(() => console.log(""))
+      .catch(() => console.log(""));
+  }, [controls]);
   return (
     <VStack p={16} minH={"100vh"} minW={"50vw"}>
       <AnimatePresence mode="wait">

@@ -2,7 +2,7 @@ type Props = {
   text: string;
   label: string;
   options: Array<{ text: string; value: string }>;
-  onChange: (s: string) => void;
+  onChange: (s: any) => void;
 };
 
 export const SelectField = ({ label, options, onChange, text }: Props) => {

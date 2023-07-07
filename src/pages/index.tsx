@@ -89,16 +89,18 @@ const Home: NextPage = () => {
                 <Button
                   text="Descubrir"
                   onClick={() => {
-                    if (!user.isSignedIn) router.push("/login");
-                    router.push("/archive");
+                    if (!user.isSignedIn)
+                      router.push("/login").catch(console.log);
+                    router.push("/archive").catch(console.log);
                   }}
                 />
                 <Button
                   text="Configurar"
                   secondary
                   onClick={() => {
-                    if (!user.isSignedIn) router.push("/login");
-                    router.push("/desk");
+                    if (!user.isSignedIn)
+                      router.push("/login").catch(console.log);
+                    router.push("/desk").catch(console.log);
                   }}
                 />
               </HStack>

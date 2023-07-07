@@ -4,7 +4,7 @@ type ButtonProps = {
   text: string;
   onClick: () => void;
   secondary?: boolean;
-  disabled: boolean;
+  disabled?: boolean;
 };
 
 const Button = ({ text, onClick, secondary, disabled = false }: ButtonProps) => (

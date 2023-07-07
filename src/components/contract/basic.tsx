@@ -1,15 +1,19 @@
 import { TextField } from "@/components/textInput";
 import { SelectField } from "../selectInput";
-import { Box, Text } from '@chakra-ui/react'
-import DatePicker from "../datePicker";
+import { Box, Text } from "@chakra-ui/react";
+// import DatePicker from "../datePicker";
 
-export const BasicConfig = ( { handleChange } ) => {
+export const BasicConfig = ({
+  handleChange,
+}: {
+  handleChange: (x: any) => void;
+}) => {
   return (
-    <Box minW={'33vw'}>
+    <Box minW={"33vw"}>
       <Text fontWeight={800} fontSize={36}>
         CONFIGURA TU CONTRATO
       </Text>
-      <section  className="w-full">
+      <section className="w-full">
         <TextField
           text="Fecha de inicio del contrato"
           label="contractStartDate"

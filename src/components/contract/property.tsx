@@ -2,7 +2,11 @@ import { TextField } from "@/components/textInput";
 import { SelectField } from "../selectInput";
 import { Box, Text } from "@chakra-ui/react";
 
-export const Property = ({ handleChange: handleChange }) => {
+export const Property = ({
+  handleChange,
+}: {
+  handleChange: (x: any) => void;
+}) => {
   return (
     <Box minW={"33vw"}>
       <Text fontWeight={800} fontSize={36}>

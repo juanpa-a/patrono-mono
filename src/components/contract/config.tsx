@@ -8,7 +8,7 @@ import { Tenant } from "./tenant";
 import Image from "next/image";
 import { TextField } from "../textInput";
 
-export const ContractFormSteps = (handleChange) => [
+export const ContractFormSteps = (handleChange: (x: any) => void) => [
   {
     form: (
       <VStack spacing={4} minW={"33vw"}>

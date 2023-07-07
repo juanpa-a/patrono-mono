@@ -1,13 +1,17 @@
 import { SelectField } from "../selectInput";
-import { Text, Box } from '@chakra-ui/react'
+import { Text, Box } from "@chakra-ui/react";
 
-export const CustomConfig = ({ handleChange: handleChange }) => {
+export const CustomConfig = ({
+  handleChange,
+}: {
+  handleChange: (x: any) => any;
+}) => {
   return (
-    <Box minW={'33vw'}>
+    <Box minW={"33vw"}>
       <Text fontWeight={800} fontSize={36}>
         YA CASI TERMINAMOS
       </Text>
-      <section  className="w-full">
+      <section className="w-full">
         <SelectField
           text="Los servicios estan incluidos?"
           label="paymentCycle"
